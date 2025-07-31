@@ -5,7 +5,8 @@
 <body>
 this is "GRWPT COLLEGE" , grwpt Gopala shimoga. "this college is best for campus selection".
 this is our college.
-this is "GRWPT COLLEGE" , grwpt Gopala shimoga. "this college is best for campus selection",
+this is "GRWPT COLLEGE" , grwpt Gopala shimoga.
+ "this college is best for campus selection",
 i'm final year student in "GRWPT"
 </body>
 </head>
