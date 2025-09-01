@@ -1,0 +1,8 @@
+<html>
+<head>
+    <title>This is GRWPT Shivamogga</title>
+</head>
+<body>
+    <p>This is Women's Polytechnic. You can join here with your completed 10th grade marks card or 12th grade marks card.</p>
+</body>
+</html>
