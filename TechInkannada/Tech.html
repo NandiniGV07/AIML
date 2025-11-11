@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tech in Kannada with Nandini</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f2130;
+      --accent:#7c3aed; /* purple */
+      --muted:#a7b0bf;
+      --white:#ffffff;
+      font-family: "Nunito", "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(135deg, #071226 0%, #0d1b2a 100%);
+      color:var(--white);
+      padding:24px;
+    }
+    .card{
+      width:100%;
+      max-width:980px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);
+      border-radius:16px;
+      padding:28px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+    }
+    .row{
+      display:flex;
+      gap:20px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .logo {
+      width:120px;
+      height:120px;
+      border-radius:14px;
+      background:linear-gradient(135deg, rgba(124,58,237,0.14), rgba(124,58,237,0.06));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      color:var(--accent);
+      font-size:20px;
+      border:1px solid rgba(124,58,237,0.12);
+    }
+    h1{
+      margin:0;
+      font-size:34px;
+      letter-spacing:0.6px;
+      color:var(--white);
+    }
+    .tag{
+      margin-top:6px;
+      color:var(--muted);
+      font-size:15px;
+    }
+    .intro{
+      margin-top:18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+      border-radius:10px;
+      padding:18px;
+      color: #f3f6fb;
+      line-height:1.6;
+      font-size:16px;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .small {
+      color:var(--muted);
+      font-size:13px;
+      margin-top:12px;
+    }
+    .actions{
+      margin-top:18px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .btn {
+      background:var(--accent);
+      color:var(--white);
+      padding:10px 16px;
+      border-radius:8px;
+      border:0;
+      cursor:pointer;
+      font-weight:700;
+      box-shadow: 0 6px 18px rgba(124,58,237,0.16);
+    }
+    .btn.ghost{
+      background:transparent;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.04);
+      box-shadow:none;
+      font-weight:600;
+    }
+    textarea{
+      width:100%;
+      margin-top:12px;
+      padding:12px;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.02);
+      color:var(--white);
+      min-height:90px;
+      font-size:15px;
+      resize:vertical;
+    }
+
+    @media (max-width:640px){
+      .row { flex-direction:column; align-items:flex-start; }
+      .logo { width:90px; height:90px; font-size:18px; }
+      h1 { font-size:24px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <div class="row">
+      <div class="logo">TIK</div>
+      <div style="flex:1">
+        <h1>Tech in Kannada with Nandini</h1>
+        <div class="tag">Learn Tech in Kannada • Git • GitHub • Projects • Datasets</div>
+      </div>
+    </div>
+
+    <section class="intro" aria-label="Video introduction">
+      <!-- Kannada + English mix intro shown on page -->
+      <p>
+        Namaskara friends! Nanna hesaru <strong>Nandini</strong>. Welcome to <strong>Tech in Kannada with Nandini</strong>.<br>
+        Ee channel-alli nanu <em>Git</em>, <em>GitHub</em>, projects mattu datasets bagge simple Kannada-dalli step-by-step explain maadthini.
+      </p>
+      <p>
+        Ivatthu video topic — <strong>Git basic operations</strong>: <code>git add</code>, <code>git commit</code>, mattu <code>git push</code>. Nivu nodi practice maadi, nimage clarity barutte.
+      </p>
+      <p class="small">
+        If you like this content, please <strong>Like</strong>, <strong>Subscribe</strong>, mattu <strong>Share</strong> maadi. New video every week!
+      </p>
+    </section>
+
+    <div class="actions">
+      <button class="btn" id="copyBtn">Copy Script</button>
+      <button class="btn ghost" id="showBtn">Show Spoken Script</button>
+    </div>
+
+    <textarea id="scriptArea" readonly style="display:none;">
+Namaskara friends! Nanna hesaru Nandini. Welcome to Tech in Kannada with Nandini.
+
+Ee channel-alli nanu Git, GitHub, projects mattu datasets bagge simple Kannada-dalli step-by-step explain maadthini.
+
+Ivatthu video topic — Git basic operations: git add, git commit, mattu git push. Nivu nodi practice maadi, nimage clarity barutte.
+
+If you like this content, please Like, Subscribe, mattu Share. New video every week!
+    </textarea>
+  </main>
+
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const showBtn = document.getElementById('showBtn');
+    const scriptArea = document.getElementById('scriptArea');
+
+    showBtn.addEventListener('click', () => {
+      if (scriptArea.style.display === 'none') {
+        scriptArea.style.display = 'block';
+        showBtn.textContent = 'Hide Spoken Script';
+      } else {
+        scriptArea.style.display = 'none';
+        showBtn.textContent = 'Show Spoken Script';
+      }
+    });
+
+    copyBtn.addEventListener('click', async () => {
+      const text = scriptArea.value.trim();
+      try {
+        await navigator.clipboard.writeText(text);
+        copyBtn.textContent = 'Copied ✓';
+        setTimeout(() => copyBtn.textContent = 'Copy Script', 1800);
+      } catch (err) {
+        alert('Could not copy automatically. You can select and copy manually.');
+      }
+    });
+  </script>
+</body>
+</html>
